@@ -188,6 +188,42 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brass); outline-off
 .sb .sg.c{background:color-mix(in srgb,var(--brass) 28%, var(--surface-2)); color:var(--text)}
 .sb .sg.inv{background:var(--line-strong); color:var(--text)}
 
+/* ───────────────────────────────────────── resposta ao mouse (DE-03) ── */
+/* Dois tratamentos, porque as peças são de duas naturezas:
+   quem tem borda e respiro LEVANTA; quem vive colado numa grade de fio de
+   1px não pode levantar (rasgaria a emenda) — esse acende por dentro. */
+.panel, .figure, .chart{
+  transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.panel:hover, .chart:hover{
+  transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--line-strong);
+}
+.panel.ours:hover{border-color:var(--brass)}
+
+.card, .step, .tier{
+  transition:background .22s ease, box-shadow .22s ease;
+  position:relative;
+}
+.card:hover, .step:hover, .tier:hover{
+  background:color-mix(in srgb, var(--brass) 6%, var(--surface));
+  box-shadow:inset 0 2px 0 var(--brass);
+}
+.tier.hi:hover{background:color-mix(in srgb, var(--brass) 12%, var(--ink))}
+
+/* linha de tabela: acende inteira, que é o que o olho quer conferir */
+.ledger tbody tr, .ledger tr{transition:background .18s ease}
+.ledger tr:hover td{background:color-mix(in srgb, var(--brass) 7%, transparent)}
+.ledger tr.tot:hover td{background:color-mix(in srgb, var(--sig) 9%, transparent)}
+
+/* as três telas empilhadas: a de cima se destaca ao ser olhada */
+.sheet{transition:transform .25s ease, box-shadow .25s ease}
+.deck3d .rig:hover .sheet{box-shadow:0 1px 2px rgba(10,31,25,.06), 0 22px 46px -18px rgba(10,31,25,.34)}
+
+@media(prefers-reduced-motion:reduce){
+  .panel,.figure,.chart,.card,.step,.tier,.sheet{transition:none}
+  .panel:hover,.chart:hover{transform:none}
+}
+
 .two{display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,3vw,32px)}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
 

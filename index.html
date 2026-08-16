@@ -304,6 +304,40 @@ ul.bul.no li::before{content:"×"; color:var(--text-3); font-family:var(--mono);
 .road h3{font-size:1.06rem; margin-bottom:.45rem}
 .road p{font-size:.9rem; color:var(--text-2); line-height:1.55}
 
+/* ───────────────────────────────────────── resposta ao mouse (DE-03) ── */
+/* O que já levantava agora também ACENDE: a borda puxa o acento e nasce uma
+   sombra. O acento entra fraco de propósito — a paleta reserva o cobre e o
+   dourado para o ponto de decisão, não para enfeitar cada cartão. */
+.card, .tier, .vetor, .rung, .lane, .pan, .figure, .road .fase{
+  transition:transform .22s ease, box-shadow .22s ease,
+             border-color .22s ease, background .22s ease;
+}
+.card:hover, .tier:hover, .vetor:hover, .rung:hover, .lane:hover{
+  border-color:color-mix(in srgb, var(--acc) 45%, var(--line));
+  box-shadow:0 1px 2px rgba(0,0,0,.3), 0 16px 34px -18px rgba(0,0,0,.8);
+  background:color-mix(in srgb, var(--acc) 4%, var(--surface));
+}
+.lane:hover{border-left-color:var(--acc-lit)}
+.tier.hi:hover{border-color:var(--acc-lit)}
+
+/* painel e figura são grandes: levantam menos e só ganham profundidade */
+.pan:hover, .figure:hover, .road .fase:hover{
+  box-shadow:0 1px 2px rgba(0,0,0,.3), 0 18px 38px -20px rgba(0,0,0,.85);
+}
+.road .fase:hover{background:color-mix(in srgb, var(--acc) 5%, var(--surface))}
+
+/* linha de tabela de decisão: acende inteira */
+.pick .row{transition:background .18s ease, box-shadow .18s ease}
+.pick .row:hover{
+  background:color-mix(in srgb, var(--acc) 6%, var(--surface-2));
+  box-shadow:inset 3px 0 0 var(--acc);
+}
+
+@media(prefers-reduced-motion:reduce){
+  .card,.tier,.vetor,.rung,.lane,.pan,.figure,.road .fase{transition:none}
+  .card:hover,.tier:hover,.vetor:hover,.rung:hover,.lane:hover{transform:none}
+}
+
 /* ───────────────────────────────────────────────────────────── chips ── */
 .chips{display:flex; flex-wrap:wrap; gap:9px}
 .chip{font-family:var(--mono); font-size:.72rem; letter-spacing:.05em; padding:.5rem .8rem;
