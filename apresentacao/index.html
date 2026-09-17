@@ -1,0 +1,209 @@
+<!doctype html>
+<!-- Página de download da apresentação do Cérebro Operacional.
+     FONTE DE VERDADE: este arquivo, no cérebro. A vitrine pública é servida
+     pelo repositório nx1-site (GitHub Pages) — ver COMO-PUBLICAR.md.
+     noindex enquanto "Cérebro Operacional" não estiver pedido no INPI. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>O trabalho que se repete sai da sua mesa — Cérebro Operacional</title>
+<meta name="description" content="Baixe a apresentação do Cérebro Operacional: o que ele faz na sua empresa, sem promessa vazia.">
+<style>
+:root{
+  --ink:#0A1F19; --brass:#B5673A; --brass-lit:#D98A54; --brass-soft:#F0E2D6;
+  --sig:#2C7A57; --warn:#B14B36; --bg:#EFF2ED; --surface:#F9FAF7; --text:#0A1F19;
+  --line:#D4DCD3; --line-strong:#B6C3B9;
+  --shadow:0 1px 2px rgba(10,31,25,.05), 0 12px 32px -14px rgba(10,31,25,.2);
+  --display:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,sans-serif;
+  --w:940px; --gut:clamp(18px,5vw,44px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#071612; --surface:#0D231C; --text:#E9F0EB; --line:#1B342A; --line-strong:#28483A;
+    --brass:#D98A54; --brass-lit:#EFAA79; --brass-soft:#33231A; --ink:#E9F0EB;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -16px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071612; --surface:#0D231C; --text:#E9F0EB; --line:#1B342A; --line-strong:#28483A;
+  --brass:#D98A54; --brass-lit:#EFAA79; --brass-soft:#33231A; --ink:#E9F0EB;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);
+     font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--gut)}
+header{padding:26px 0 6px}
+.marca{font-family:var(--display);font-size:15px;letter-spacing:.02em;color:var(--brass);margin:0}
+.marca span{color:var(--text);opacity:.6}
+h1{font-family:var(--display);font-size:clamp(30px,6vw,46px);line-height:1.12;margin:18px 0 10px;letter-spacing:-.01em}
+.sub{font-size:clamp(17px,2.4vw,20px);margin:0 0 26px;max-width:38ch;opacity:.88}
+.dores{display:grid;gap:10px;grid-template-columns:1fr;margin:0 0 30px;padding:0;list-style:none}
+@media(min-width:680px){.dores{grid-template-columns:repeat(2,1fr);gap:12px}}
+.dores li{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+          padding:13px 15px;font-size:15.5px}
+.dores b{display:block;font-family:var(--display);font-size:16.5px;margin-bottom:2px}
+.cartao{background:var(--surface);border:1px solid var(--line-strong);border-radius:16px;
+        padding:clamp(20px,4vw,30px);box-shadow:var(--shadow);margin:0 0 34px}
+.cartao h2{font-family:var(--display);font-size:clamp(21px,3.4vw,26px);margin:0 0 6px}
+.cartao p.linha{margin:0 0 20px;font-size:15.5px;opacity:.85}
+label{display:block;font-size:14px;font-weight:600;margin:14px 0 5px}
+input,select{width:100%;padding:12px 13px;font-size:16px;font-family:inherit;color:var(--text);
+  background:var(--bg);border:1px solid var(--line-strong);border-radius:10px;transition:border-color .18s}
+input:focus,select:focus{outline:none;border-color:var(--brass)}
+.dupla{display:grid;gap:0 14px;grid-template-columns:1fr}
+@media(min-width:680px){.dupla{grid-template-columns:1fr 1fr}}
+button{margin-top:22px;width:100%;padding:15px 18px;font-size:17px;font-weight:600;font-family:inherit;
+  color:#fff;background:var(--brass);border:none;border-radius:10px;cursor:pointer;transition:background .18s,transform .18s}
+button:hover{background:var(--brass-lit);transform:translateY(-1px)}
+button:disabled{opacity:.6;cursor:progress;transform:none}
+.mini{font-size:13px;opacity:.7;margin:12px 0 0;line-height:1.45}
+.erro{color:var(--warn);font-size:14.5px;margin:12px 0 0;font-weight:600}
+.pronto{display:none}
+.pronto.ativo{display:block}
+.form.escondido{display:none}
+.ok{font-family:var(--display);font-size:clamp(21px,3.4vw,26px);margin:0 0 8px;color:var(--sig)}
+.botoes{display:grid;gap:12px;margin-top:20px}
+@media(min-width:680px){.botoes{grid-template-columns:1fr 1fr}}
+.botao{display:block;text-align:center;padding:15px 18px;border-radius:10px;font-weight:600;
+       text-decoration:none;font-size:16.5px;transition:transform .18s}
+.botao:hover{transform:translateY(-1px)}
+.primario{background:var(--sig);color:#fff}
+.secundario{background:var(--brass-soft);color:var(--ink);border:1px solid var(--line-strong)}
+.nao{border-top:1px solid var(--line);margin-top:6px;padding-top:22px}
+.nao h2{font-family:var(--display);font-size:20px;margin:0 0 10px}
+.nao ul{margin:0;padding-left:20px}
+.nao li{margin:5px 0;font-size:15.5px}
+footer{border-top:1px solid var(--line);margin-top:34px;padding:20px 0 40px;font-size:14px;opacity:.72}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header><p class="marca">NX1 <span>· Alexandre Oliveira</span></p></header>
+
+<h1>O trabalho que se repete sai da sua mesa.</h1>
+<p class="sub">Eu resolvo o operacional da pequena empresa. Veja na apresentação como isso funciona por dentro — sem contratar mais gente.</p>
+
+<ul class="dores">
+  <li><b>O dia inteiro no WhatsApp</b>Responder cliente, mandar orçamento, lembrar quem sumiu.</li>
+  <li><b>Tudo passa por você</b>A equipe pergunta, e a resposta certa mora na sua cabeça.</li>
+  <li><b>Papelada que não acaba</b>Cadastro, planilha, conta a pagar, documento para organizar.</li>
+  <li><b>Cobrança que fica para depois</b>Quem pagou, quem deve, o que vence esta semana.</li>
+</ul>
+
+<div class="cartao">
+  <div class="form" id="form">
+    <h2>Receba a apresentação</h2>
+    <p class="linha">São 22 telas, em linguagem de dono. Deixe nome e WhatsApp: o arquivo abre na hora.</p>
+
+    <label for="nome">Seu nome</label>
+    <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como você quer ser chamado">
+
+    <div class="dupla">
+      <div>
+        <label for="whatsapp">Seu WhatsApp, com DDD</label>
+        <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
+      </div>
+      <div>
+        <label for="empresa">Sua empresa</label>
+        <input id="empresa" name="empresa" type="text" placeholder="O nome, ou o que ela faz">
+      </div>
+    </div>
+
+    <div class="dupla">
+      <div>
+        <label for="pessoas">Quantas pessoas trabalham com você</label>
+        <select id="pessoas">
+          <option value="">Escolha</option>
+          <option>só eu</option>
+          <option>2 a 3</option>
+          <option>4 a 7</option>
+          <option>8 a 15</option>
+          <option>mais de 15</option>
+        </select>
+      </div>
+      <div>
+        <label for="dor">O que mais toma o seu tempo</label>
+        <select id="dor">
+          <option value="">Escolha</option>
+          <option>atender cliente</option>
+          <option>papelada e planilha</option>
+          <option>cobrança</option>
+          <option>explicar as coisas para a equipe</option>
+          <option>os números da empresa</option>
+          <option>outra coisa</option>
+        </select>
+      </div>
+    </div>
+
+    <button id="enviar" type="button">Quero ver a apresentação</button>
+    <p class="erro" id="erro" hidden></p>
+    <p class="mini">Seus dados ficam comigo e servem só para essa conversa. Sem lista de disparo, sem repassar para ninguém.</p>
+  </div>
+
+  <div class="pronto" id="pronto">
+    <p class="ok">Pronto. A apresentação é sua.</p>
+    <p class="linha" id="recado">Se preferir, me chame no WhatsApp e eu te conto em dois minutos se isso serve para a sua empresa — ou se ainda não é hora.</p>
+    <div class="botoes">
+      <a class="botao primario" id="link-pdf" href="#" target="_blank" rel="noopener">Abrir a apresentação</a>
+      <a class="botao secundario" id="link-whats" href="#" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<div class="nao">
+  <h2>O que ele não faz</h2>
+  <ul>
+    <li>Não envia, não paga e não publica nada sem o seu "pode".</li>
+    <li>Não substitui o seu sistema, nem o contador, nem o advogado.</li>
+    <li>Não existe para você demitir ninguém: tira o trabalho repetido, não a pessoa.</li>
+  </ul>
+</div>
+
+<footer>NX1 · Alexandre Oliveira · Cérebro Operacional</footer>
+</div>
+
+<script>
+(function(){
+  var API = "https://ktvcqhxdbpbbfbikwcae.supabase.co/functions/v1/cerebro-lead";
+  var bt = document.getElementById("enviar");
+  var erro = document.getElementById("erro");
+
+  function mostraErro(msg){ erro.textContent = msg; erro.hidden = false; }
+
+  bt.addEventListener("click", function(){
+    erro.hidden = true;
+    var dados = {
+      nome: document.getElementById("nome").value,
+      whatsapp: document.getElementById("whatsapp").value,
+      empresa: document.getElementById("empresa").value,
+      pessoas: document.getElementById("pessoas").value,
+      dor: document.getElementById("dor").value,
+      origem: location.search.replace("?","").slice(0,40) || "direto"
+    };
+    if(!dados.nome || dados.nome.trim().length < 2){ mostraErro("Escreva o seu nome."); return; }
+    if(dados.whatsapp.replace(/\D/g,"").length < 10){ mostraErro("Escreva o WhatsApp com DDD."); return; }
+
+    bt.disabled = true; bt.textContent = "Um instante...";
+    fetch(API, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(dados) })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        if(!d.ok){ throw new Error(d.erro || "erro"); }
+        document.getElementById("link-pdf").href = d.pdf;
+        document.getElementById("link-whats").href = d.whatsapp;
+        document.getElementById("form").classList.add("escondido");
+        document.getElementById("pronto").classList.add("ativo");
+        window.open(d.pdf, "_blank", "noopener");
+      })
+      .catch(function(e){
+        bt.disabled = false; bt.textContent = "Quero ver a apresentação";
+        mostraErro(String(e.message || e) === "erro" ? "Não consegui enviar. Tente de novo." : String(e.message));
+      });
+  });
+})();
+</script>
+</body>
+</html>
