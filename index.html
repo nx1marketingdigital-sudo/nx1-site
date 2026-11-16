@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C1A30">
 <title>Inteligência Artificial para Empresas | Cérebro Operacional™ · NX1</title>
 <meta name="description" content="Implantação de inteligência artificial em empresas de serviço. O Cérebro Operacional™ da NX1 transforma os processos da sua empresa numa memória viva que a IA executa todo dia — instalado em 60 dias, operado pelo seu time.">
 <link rel="canonical" href="https://nx1marketingdigital-sudo.github.io/nx1-site/">
@@ -38,7 +39,8 @@
   --shadow:0 1px 2px rgba(19,33,59,.06),0 18px 40px -22px rgba(19,33,59,.35);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:96px}
+@media(max-width:860px){html{scroll-padding-top:80px}}
 body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
@@ -71,14 +73,19 @@ section{padding-block:clamp(64px,9vw,112px)}
 .btn svg{width:18px;height:18px}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(12,26,48,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
-.brand img{height:44px;width:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(12,26,48,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:88px}
+.brand{display:block;flex:none}
+.brand img{height:60px;width:auto;display:block}
+nav .short{display:none}
+nav a{white-space:nowrap}
+@media(max-width:1040px){nav a:not(.btn){display:none}}
 nav{display:flex;align-items:center;gap:1.6rem}
 nav a{color:#C9D3E6;text-decoration:none;font-size:.9rem;font-weight:500}
 nav a:hover{color:#fff}
 nav .btn{padding:.72rem 1.15rem;font-size:.86rem}
-@media(max-width:860px){nav a:not(.btn){display:none}.brand img{height:36px}}
+@media(max-width:860px){nav a:not(.btn){display:none}header .wrap{height:72px}.brand img{height:46px}}
+@media(max-width:400px){.brand img{height:44px}nav .btn{padding:.7rem 1rem}nav .long{display:none}nav .short{display:inline}}
 
 /* hero */
 .hero{background:radial-gradient(1200px 600px at 78% 30%,rgba(58,84,136,.45),transparent 60%),linear-gradient(180deg,var(--navy-900),var(--navy));color:#fff;padding-block:clamp(56px,8vw,96px) 0;overflow:hidden}
@@ -202,6 +209,7 @@ form.card label{display:grid;gap:.35rem;font-size:.8rem;font-weight:600}
 form.card input,form.card select,form.card textarea{font:500 .95rem var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.8rem .9rem;width:100%}
 form.card textarea{min-height:84px;resize:vertical}
 form.card input:focus,form.card select:focus,form.card textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+form.card input,form.card select,form.card textarea{font-size:16px}
 form.card .btn{grid-column:1/-1;border-radius:12px;background:var(--wa);color:#fff}
 form.card .mini{grid-column:1/-1;text-align:center}
 @media(max-width:520px){form.card{grid-template-columns:1fr}}
@@ -278,7 +286,7 @@ footer img{height:40px;width:auto}
 footer a{color:#C9D3E6;text-decoration:none}
 
 /* WhatsApp flutuante */
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.45)}
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.45)}
 .wa-float svg{width:28px;height:28px}
 
 
@@ -359,7 +367,7 @@ footer a{color:#C9D3E6;text-decoration:none}
       <a href="#planos">Planos</a>
       <a href="#quem">Quem atende</a>
       <a href="#duvidas">Dúvidas</a>
-      <a class="btn btn-gold" href="#diagnostico">Agendar diagnóstico</a>
+      <a class="btn btn-gold" href="#diagnostico"><span class="long">Agendar diagnóstico</span><span class="short">Diagnóstico</span></a>
     </nav>
   </div>
 </header>
