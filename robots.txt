@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nx1digital.com.br/sitemap.xml
